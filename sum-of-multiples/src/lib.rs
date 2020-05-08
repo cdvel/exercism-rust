@@ -6,7 +6,7 @@ pub fn sum_of_multiples(limit: u32, factors: &[u32]) -> u32 {
             multiples.append(
                 &mut (1..limit)
                     .filter(|x| x % f == 0 && !multiples.contains(x))
-                    .collect::<Vec<u32>>(),
+                    .collect::<Vec<u32>>()
             );
         }
     }
