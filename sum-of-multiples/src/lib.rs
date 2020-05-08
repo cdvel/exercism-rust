@@ -11,10 +11,5 @@ pub fn sum_of_multiples(limit: u32, factors: &[u32]) -> u32 {
         }
     }
 
-    println!(
-        "limit={:?} factors={:?}  result={:?}",
-        limit, factors, multiples
-    );
-
     multiples.into_iter().sum()
 }
