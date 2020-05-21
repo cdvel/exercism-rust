@@ -11,23 +11,11 @@ pub fn brackets_are_balanced(string: &str) -> bool {
                     return false;
                 }
                 stack.pop();
-                match c {
-                    '}' => {
-                        if t == '(' || t == '[' {
-                            return false;
-                        }
-                    }
-                    ']' => {
-                        if t == '{' || t == '(' {
-                            return false;
-                        }
-                    }
-                    ')' => {
-                        if t == '{' || t == '[' {
-                            return false;
-                        }
-                    }
-                    _ => (),
+                match c{
+                    '}' if "([".contains(t) => return false,
+                    ']' if "({".contains(t) => return false,
+                    ')' if "{[".contains(t) => return false,
+                    _ => continue
                 }
             }
             _ => (),
