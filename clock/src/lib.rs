@@ -1,13 +1,15 @@
+use std::fmt::{Debug, Formatter, Result};
+
 const MINUTES_AN_HOUR: i32 = 60;
 const HOURS_A_DAY: i32 = 24;
 
-#[derive(std::fmt::Debug, PartialEq)]
+#[derive(Debug, PartialEq)]
 pub struct Clock {
     minutes: i32,
 }
 
 impl std::fmt::Display for Clock {
-    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+    fn fmt(&self, f: &mut Formatter) -> Result {
         write!(
             f,
             "{:02}:{:02}",
